@@ -1,0 +1,22 @@
+.styleBox {
+    border: 3px solid powderblue;
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+    
+}
+
+.styleSquare {
+    width: 350px;
+    height: 400px;  
+    border: 3px solid powderblue;
+    display: none;
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
