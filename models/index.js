@@ -30,13 +30,11 @@ Review.belongsTo(Game, {
     foreignKey: "game_id"
 });
 
-// User.hasMany(Project, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
-// });
+User.hasMany(Review, {
+    foreignKey: "user_id",
+    onDelete: "CASCADE",
+});
 
-// Project.belongsTo(User, {
-//   foreignKey: 'user_id'
-// });
-
-// module.exports = { User};
+Review.belongsTo(User, {
+    foreignKey: "user_id",
+});
