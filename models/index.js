@@ -1,7 +1,9 @@
 const User = require('./User');
 const path = require('path')
 const hbs = require('hbs');
-const express = require('express')
+const express = require('express');
+const Game = require('./Game');
+const Review = require('./Review')
 const app = express()
 
 app.set('views', path.join(__dirname))
@@ -19,13 +21,20 @@ app.listen(3000, function(error) {
     console.log("Server says hi")
 })
 
-// User.hasMany(Project, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
-// });
+Game.hasMany(Review, {
+    foreignKey: "game_id",
+    onDelete: "CASCADE"
+});
 
-// Project.belongsTo(User, {
-//   foreignKey: 'user_id'
-// });
+Review.belongsTo(Game, {
+    foreignKey: "game_id"
+});
 
-// module.exports = { User};
+User.hasMany(Review, {
+    foreignKey: "user_id",
+    onDelete: "CASCADE",
+});
+
+Review.belongsTo(User, {
+    foreignKey: "user_id",
+});
