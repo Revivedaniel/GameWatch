@@ -1,0 +1,20 @@
+[
+    {
+        "user_id": 1,
+        "game_id": 1,
+        "stars": 4,
+        "review": "The game was very difficult! But I still enjoyed the mechanics and the deep lore of the game."
+    },
+    {
+        "user_id": 2,
+        "game_id": 2,
+        "stars": 3,
+        "review": "Great music but I lost track of the story somewhere in the end."
+    },
+    {
+        "user_id": 1,
+        "game_id": 3,
+        "stars": 4,
+        "review": "Great music, cool story, dark themed, very enjoyable."
+    }
+]
