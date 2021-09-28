@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/infopage', (req, res) => {
-  res.render('infopage');
+  res.render("infopage");
 });
 
 module.exports = router;
