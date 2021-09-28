@@ -22,6 +22,10 @@ Game.init(
           description: {
             type: DataTypes.STRING,
             allowNull: false,
+          },
+          rating: {
+            type: DataTypes.STRING,
+            allowNull: false
           }
     },
     {
