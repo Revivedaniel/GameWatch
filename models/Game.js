@@ -15,13 +15,25 @@ Game.init(
             type: DataTypes.STRING,
             allowNull: false,
           },
-          genre: {
+          genres: {
             type: DataTypes.STRING,
             allowNull: false,
           },
-          description: {
+          summary: {
             type: DataTypes.STRING,
             allowNull: false,
+          },
+          age_ratings: {
+            type: DataTypes.STRING,
+            allowNull: false
+          },
+          cover: {
+            type: DataTypes.STRING,
+            allowNull: false
+          },
+          slug: {
+            type: DataTypes.STRING,
+            allowNull: false
           }
     },
     {
