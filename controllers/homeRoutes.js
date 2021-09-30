@@ -10,4 +10,6 @@ router.get('/infopage', (req, res) => {
   res.render("infopage");
 });
 
+
+
 module.exports = router;
