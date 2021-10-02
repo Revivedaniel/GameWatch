@@ -14,7 +14,6 @@ router.get("/game/:title", async (req, res) => {
   try {
       //WORKING HERE recreate game model then continue here
       const gameData = await Game.findOne({where: {slug: req.params.title}});
-
       const game = gameData.get({plain: true});
 
       res.render('infopage', game)
@@ -22,5 +21,6 @@ router.get("/game/:title", async (req, res) => {
       res.status(500).json(err)
   }
 })
+
 
 module.exports = router;
