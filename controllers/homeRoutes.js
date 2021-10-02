@@ -10,9 +10,6 @@ router.get('/infopage', (req, res) => {
   res.render("infopage");
 });
 
-<<<<<<< HEAD
-
-=======
 router.get("/game/:title", async (req, res) => {
   try {
       //WORKING HERE recreate game model then continue here
@@ -25,6 +22,5 @@ router.get("/game/:title", async (req, res) => {
       res.status(500).json(err)
   }
 })
->>>>>>> main
 
 module.exports = router;
