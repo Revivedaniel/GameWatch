@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Review = require('../../models/Review');
+const User = require('../../models/User')
 
 router.post('/', async (req, res) => {
   try {
@@ -19,18 +20,31 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-  try {
-    const review = await Review.update(
-      {
-        stars: req.body.stars,
-        review: req.body.review,
-      },
-      { where: { id: req.params.id } }
-    );
-    res.status(200).json(review);
-  } catch (err) {
-    res.status(500).json(err);
-  }
+    //search for the review
+      //gather the game_id and user_id
+    try{
+        const reviewData = await Review.findByPk(req.params.id);
+        const review = reviewData.get({plain: true})
+        console.log(review)
+        if (req.session.user_id == review.user_id) {
+            console.log("Success")
+        }
+    } catch (err) {
+        console.log(err)
+    }
+
+//   try {
+//     const review = await Review.update(
+//       {
+//         stars: req.body.stars,
+//         review: req.body.review,
+//       },
+//       { where: { id: req.params.id } }
+//     );
+//     res.status(200).json(review);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
 });
 
 module.exports = router;
