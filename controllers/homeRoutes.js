@@ -9,14 +9,14 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/infopage', (req, res) => {
-  res.render('infopage');
+  res.render("infopage");
 });
 
 router.get('/game/:title', async (req, res) => {
   try {
-    const gameData = await Game.findOne({ where: { slug: req.params.title } });
-
-    const game = gameData.get({ plain: true });
+      //WORKING HERE recreate game model then continue here
+      const gameData = await Game.findOne({where: {slug: req.params.title}});
+      const game = gameData.get({plain: true});
 
     res.render('infopage', game);
   } catch (err) {
@@ -72,5 +72,6 @@ router.get('/game/:title', async (req, res) => {
 
   }
 });
+
 
 module.exports = router;
