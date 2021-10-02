@@ -28,23 +28,23 @@ router.put('/:id', async (req, res) => {
         console.log(review)
         if (req.session.user_id == review.user_id) {
             console.log("Success")
+            try {
+              const review = await Review.update(
+                {
+                  stars: req.body.stars,
+                  review: req.body.review,
+                },
+                { where: { id: req.params.id } }
+              );
+              res.status(200).json(review);
+            } catch (err) {
+              res.status(500).json(err);
+            }
         }
     } catch (err) {
         console.log(err)
     }
 
-//   try {
-//     const review = await Review.update(
-//       {
-//         stars: req.body.stars,
-//         review: req.body.review,
-//       },
-//       { where: { id: req.params.id } }
-//     );
-//     res.status(200).json(review);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
 });
 
 module.exports = router;
