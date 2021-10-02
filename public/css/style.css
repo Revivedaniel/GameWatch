@@ -1,3 +1,29 @@
 *{ 
     background-color: rgb(250, 193, 203);
 }
+
+.video_List {
+    width: 100px;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.video_List > iframe {
+    width: 100px;
+    height: 100px;
+}
+
+.video_List {
+    transform: rotate(-90deg);
+    transform-origin: right top;
+  }
+
+.video_List > iframe {
+    transform: rotate(90deg);
+    transform-origin: right top;
+  }
+
+.video_List {
+    transform:rotate(-90deg) translateY(-100px);
+  }
