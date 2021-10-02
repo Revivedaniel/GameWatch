@@ -1,29 +1,46 @@
-*{ 
-    background-color: rgb(250, 193, 203);
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.video_List {
-    width: 100px;
-    height: 300px;
-    overflow-y: auto;
-    overflow-x: hidden;
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
 }
 
-.video_List > iframe {
-    width: 100px;
-    height: 100px;
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.video_List {
-    transform: rotate(-90deg);
-    transform-origin: right top;
-  }
+.hero.home {
+  background: url("../img/download.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
 
-.video_List > iframe {
-    transform: rotate(90deg);
-    transform-origin: right top;
-  }
+.hero {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-.video_List {
-    transform:rotate(-90deg) translateY(-100px);
-  }
+.games {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.game {
+  flex: 0 1 300px;
+}
