@@ -61,12 +61,13 @@ router.get('/game/:title', async (req, res) => {
           //slug
           slug: newGameData.slug
         })
-          .then((newGame) => {
+          .then((gameData) => {
+            const newGame = gameData.get({ plain: true });
             res.render('infopage', newGame);
           })
       })
       .catch(err => {
-        console.error(err);
+        // res.render()
       });
 
   }
