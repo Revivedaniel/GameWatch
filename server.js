@@ -16,7 +16,16 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  cookie: {
+    //Setting max age of session to 20 minutes
+    maxAge: 1200000,
+    //When the protocol being used to connect to the server is HTTP, store session
+    httpOnly: true,
+    //When the protocol being used is HTTPS, dont use cookie
+    secure: false,
+    //use cookie only on our site
+    sameSite: 'strict',
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
