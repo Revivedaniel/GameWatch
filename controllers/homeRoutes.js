@@ -21,48 +21,54 @@ router.get('/game/:title', async (req, res) => {
     res.render('infopage', game);
   } catch (err) {
     const gameData = await axios({
-      url: 'https://api.igdb.com/v4/games',
+      url: "https://api.igdb.com/v4/games",
       method: 'POST',
       headers: {
-        Accept: 'application/json',
+        'Accept': 'application/json',
         'Client-ID': `${process.env.client_id}`,
-        Authorization: `Bearer ${process.env.token}`,
+        'Authorization': `Bearer ${process.env.token}`,
       },
-      data: `fields age_ratings, cover, name, slug, summary, genres; where slug = "${req.params.title}";`,
+      data: `fields age_ratings.category, age_ratings.rating, cover.image_id, genres.name, name, slug, summary; where slug = "${req.params.title}";`
     })
-      .then(async (response) => {
-        //working here trying to make a second api call to get the cover_id
-        res.status(200).json(response.data);
-        //create new game with this data
-        const newGame = 
-          //title as is
-          //genres loaded
-          //summary as is
-          //age_ratings loaded
-          //cover and width loaded
-          axios({
-            url: "https://api.igdb.com/v4/covers",
-            method: 'POST',
-            headers: {
-              Accept: 'application/json',
-              'Client-ID': `${process.env.client_id}`,
-              Authorization: `Bearer ${process.env.token}`,
-            },
-            data: `fields image_id,width; where id = ${response.data.cover}`
-          })
-            .then(coverRes => {
-                res.status(200).json(coverRes)
-            })
-            .catch(err => {
-                console.error(err);
-            });
+      .then(response => {
+        const newGameData = response.data[0]
+        newGameData.new_age_ratings = [];
+        newGameData.new_genres = [];
 
-          ////images.igdb.com/igdb/image/upload/t_thumb/co2s5t.jpg
-          //slug as is
+
+        for (const key in newGameData.age_ratings) {
+            const element = newGameData.age_ratings[key];
+            newGameData.new_age_ratings.push(element.rating)
+          }
+
+        for (const key in newGameData.genres) {
+            const element = newGameData.genres[key];
+            newGameData.new_genres.push(element.name)
+          }
+
+        //create new game
+        Game.create({
+          //title
+          title: newGameData.name,
+          //genres
+          genres: JSON.stringify(newGameData.new_genres),
+          //summary
+          summary: newGameData.summary,
+          //age_ratings
+          age_ratings: JSON.stringify(newGameData.new_age_ratings),
+          //cover
+          cover: newGameData.cover.image_id,
+          //slug
+          slug: newGameData.slug
+        })
+          .then((newGame) => {
+            res.render('infopage', newGame);
+          })
       })
-      .catch((err) => {
-        res.status(404).json(err);
+      .catch(err => {
+        console.error(err);
       });
+
   }
 });
 
