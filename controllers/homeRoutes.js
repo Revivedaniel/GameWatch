@@ -5,7 +5,14 @@ const axios = require('axios');
 require('dotenv').config();
 
 router.get('/', async (req, res) => {
-  res.render('homepage');
+  try {
+    //WORKING HERE recreate game model then continue here
+    const gameData = await Game.findAll();
+    const games = gameData.map(g => g.get({plain: true}));
+    console.log(games);
+    res.render('homepage', {games});
+} catch (err) {
+}
 });
 
 router.get('/infopage', (req, res) => {
