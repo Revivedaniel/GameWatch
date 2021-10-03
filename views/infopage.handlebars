@@ -11,6 +11,11 @@
     <p>{{summary}}</p>
 
   </div>
+  <section>
+    {{#each reviews as |review|}}
+    {{> review-card}}
+    {{/each}}
+  </section>
   
 </body>
 </html>
