@@ -1,4 +1,8 @@
 <article>
+  {{#if owner}}
+    <button id="deleteButton" data-review_id={{id}}>Delete</button>
+    <script src="/js/deleteReview.js"></script>
+  {{/if}}
   <p>Stars: {{stars}}</p>
   <p>{{review}}</p>
 </article>
