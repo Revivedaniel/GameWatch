@@ -13,7 +13,10 @@ router.get('/', async (req, res) => {
         const element = games[key];
         element.genres = JSON.parse(element.genres)
     }
-    res.render('homepage', {games});
+    res.render('homepage', {
+      games,
+      logged_in: req.session.logged_in
+    });
 } catch (err) {
 }
 });
@@ -44,7 +47,10 @@ router.get('/game/:title', async (req, res) => {
       game.reviews = reviews;
 
 
-    res.render('infopage', game);
+    res.render('infopage', {
+      ...game,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     await axios({
       url: "https://api.igdb.com/v4/games",
