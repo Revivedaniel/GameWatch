@@ -1,0 +1,26 @@
+
+<body>
+  <header class="topnav">
+    <form id="search">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit">Search</button>
+    </form>
+    <nav>
+      <a class="active" href="/">Home</a>
+    </nav>
+    <span>
+      {{#if logged_in}}
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+    </span>
+  </header>
+{{{body}}}
+<script src="/js/search.js"></script>
+{{#if logged_in}}
+  <script src="/js/logout.js"></script>
+{{/if}}
+</body>
+
+</html>
