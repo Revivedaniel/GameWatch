@@ -11,7 +11,7 @@
     <p>{{summary}}</p>
 
   </div>
-  <section>
+  <section id="reviews">
     {{#each reviews as |review|}}
     {{> review-card}}
     {{/each}}
@@ -31,8 +31,9 @@
     </span>
     <span>
       <input type="text" name="review">
+      <button type="submit" data-game_id={{id}}>Submit</button>
     </span>
   </aside>
-  
+  <script src="../js/newReview.js"></script>
 </body>
 </html>
