@@ -6,7 +6,6 @@ require('dotenv').config();
 
 router.get('/', async (req, res) => {
   try {
-    //WORKING HERE recreate game model then continue here
     const gameData = await Game.findAll();
     const games = gameData.map(g => g.get({plain: true}));
     console.log(games);
@@ -19,9 +18,18 @@ router.get('/infopage', (req, res) => {
   res.render("infopage");
 });
 
+router.get('/login', (req, res) => {
+  res.render('login')
+})
+router.put('/login', (req, res) => {
+  res.render('login')
+})
+router.delete('/login', (req, res) => {
+  res.render('login')
+})
+
 router.get('/game/:title', async (req, res) => {
   try {
-      //WORKING HERE recreate game model then continue here
       const gameData = await Game.findOne({where: {slug: req.params.title}});
       const game = gameData.get({plain: true});
 
@@ -45,7 +53,48 @@ router.get('/game/:title', async (req, res) => {
 
         for (const key in newGameData.age_ratings) {
             const element = newGameData.age_ratings[key];
-            newGameData.new_age_ratings.push(element.rating)
+            switch (element.rating) {
+              case 1:
+                  newGameData.new_age_ratings.push("Three")
+                break;
+              case 2:
+                  newGameData.new_age_ratings.push("Seven")
+                break;
+              case 3:
+                  newGameData.new_age_ratings.push("Twelve")
+                break;
+              case 4:
+                  newGameData.new_age_ratings.push("Sixteen")
+                break;
+              case 5:
+                  newGameData.new_age_ratings.push("Eighteen")
+                break;
+              case 6:
+                  newGameData.new_age_ratings.push("RP")
+                break;
+              case 7:
+                  newGameData.new_age_ratings.push("EC")
+                break;
+              case 8:
+                  newGameData.new_age_ratings.push("E")
+                break;
+              case 9:
+                  newGameData.new_age_ratings.push("E10")
+                break;
+              case 10:
+                  newGameData.new_age_ratings.push("T")
+                break;
+              case 11:
+                  newGameData.new_age_ratings.push("M")
+                break;
+              case 12:
+                  newGameData.new_age_ratings.push("AO")
+                break;
+            
+              default:
+                break;
+            }
+            // newGameData.new_age_ratings.push(element.rating)
           }
 
         for (const key in newGameData.genres) {
