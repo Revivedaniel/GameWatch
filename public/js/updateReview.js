@@ -29,7 +29,7 @@ updateButton.addEventListener('click', async (event) => {
     const input = document.createElement('input');
     input.setAttribute('type', "text")
     input.setAttribute('name', "review")
-    input.setAttribute('id', 'newReview')
+    input.setAttribute('id', 'updatedReview')
     input.value = updateButton.parentElement.querySelector('.reviewBody').dataset.reviewbody
 
     const button = document.createElement('button');
@@ -52,7 +52,7 @@ updateButton.addEventListener('click', async (event) => {
 
         const updatedReview = {
             stars: event.target.parentElement.parentElement.querySelector('#newStars').value,
-            review: event.target.parentElement.querySelector('#newReview').value
+            review: event.target.parentElement.querySelector('#updatedReview').value
         }
 
         const response = await fetch(`/api/reviews/${updateButton.dataset.review_id}`, {
