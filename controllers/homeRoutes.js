@@ -8,6 +8,10 @@ router.get('/', async (req, res) => {
   try {
     const gameData = await Game.findAll();
     const games = gameData.map(g => g.get({plain: true}));
+    for (const key in games) {
+        const element = games[key];
+        element.genres = JSON.parse(element.genres)
+    }
     console.log(games);
     res.render('homepage', {games});
 } catch (err) {
@@ -32,6 +36,7 @@ router.get('/game/:title', async (req, res) => {
   try {
       const gameData = await Game.findOne({where: {slug: req.params.title}});
       const game = gameData.get({plain: true});
+      game.genres = JSON.parse(game.genres)
 
     res.render('infopage', game);
   } catch (err) {
@@ -119,6 +124,7 @@ router.get('/game/:title', async (req, res) => {
         })
           .then((gameData) => {
             const newGame = gameData.get({ plain: true });
+            newGame.genres = JSON.parse(newGame.genres)
             res.render('infopage', newGame);
           })
       })
