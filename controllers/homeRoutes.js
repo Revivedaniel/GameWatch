@@ -44,8 +44,15 @@ router.get('/game/:title', async (req, res) => {
 
       const reviewData = await Review.findAll({where: {game_id: game.id}})
       const reviews = reviewData.map(r => r.get({plain: true}));
+      for (const key in reviews) {
+          const element = reviews[key];
+          if (element.user_id == req.session.user_id) {
+            element.owner = true;
+          }
+      }
+      console.log(reviews)
       game.reviews = reviews;
-
+      
 
     res.render('infopage', {
       ...game,
