@@ -1,5 +1,7 @@
 const updateButton = document.querySelector('#updateButton');
-
+//Adding eventlistener to updateButton that hides the button, stars, and review
+//And replaces them with the inputs as if you were going to create a new review
+//The values of the review the user is updating are auto filled for a better UX
 updateButton.addEventListener('click', async (event) => {
     event.preventDefault();
     updateButton.style.display = "none"
@@ -8,7 +10,7 @@ updateButton.addEventListener('click', async (event) => {
     event.target.parentElement.querySelector('.stars').style.display = "none";
     //hiding current reviewBody
     event.target.parentElement.querySelector('.reviewBody').style.display = "none";
-    console.log(event.target.parentElement)
+    //Creating all the elements and setting their values
     const span1 = document.createElement('span');
     const span2 = document.createElement('span');
 
@@ -29,7 +31,7 @@ updateButton.addEventListener('click', async (event) => {
     const input = document.createElement('input');
     input.setAttribute('type', "text")
     input.setAttribute('name', "review")
-    input.setAttribute('id', 'newReview')
+    input.setAttribute('id', 'updatedReview')
     input.value = updateButton.parentElement.querySelector('.reviewBody').dataset.reviewbody
 
     const button = document.createElement('button');
@@ -46,13 +48,13 @@ updateButton.addEventListener('click', async (event) => {
 
     event.target.parentElement.append(span1)
     event.target.parentElement.append(span2)
-
+    //Adding eventlistener to the new update button to send a PUT fetch request with the route being /api/reviews/{Review ID}
     button.addEventListener('click', async (event) => {
         event.preventDefault();
 
         const updatedReview = {
             stars: event.target.parentElement.parentElement.querySelector('#newStars').value,
-            review: event.target.parentElement.querySelector('#newReview').value
+            review: event.target.parentElement.querySelector('#updatedReview').value
         }
 
         const response = await fetch(`/api/reviews/${updateButton.dataset.review_id}`, {

@@ -1,9 +1,14 @@
+//Selecting the aside element
 const review = document.querySelector('#newReview');
+//Selecting the stars input
 const select = review.querySelector('select');
+//Selecting the review input
 const input = review.querySelector('input');
+//selecting the submit button
 const button = review.querySelector('button');
+//Selecting the section with the id of reviews
 const reviewsEl = document.querySelector('#reviews');
-
+//Adding event listener for the submit button to gather the values of stars and review and send a POST fetch request to /api/reviews to create a new review
 button.addEventListener('click', async (event) => {
   event.preventDefault();
 
@@ -18,8 +23,11 @@ button.addEventListener('click', async (event) => {
     body: JSON.stringify({ ...newReview }),
     headers: { 'Content-Type': 'application/json' },
   });
-  if (response.ok) {
-    document.location.reload();
+  //If the reponse is redirected, redirect the user to the login page
+  if (response.redirected) {
+    window.location = "/login"
+  } else if (response.ok) {
+    window.location.reload();
   } else {
     alert(response.statusText);
   }
