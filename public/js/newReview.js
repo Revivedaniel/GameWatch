@@ -18,8 +18,11 @@ button.addEventListener('click', async (event) => {
     body: JSON.stringify({ ...newReview }),
     headers: { 'Content-Type': 'application/json' },
   });
-  if (response.ok) {
-    document.location.reload();
+
+  if (response.redirected) {
+    window.location = "/login"
+  } else if (response.ok) {
+    window.location.reload();
   } else {
     alert(response.statusText);
   }
