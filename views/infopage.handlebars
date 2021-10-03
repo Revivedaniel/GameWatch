@@ -4,7 +4,9 @@
   <div class="">
     <h2>{{title}}</h2>
     <img src="https://images.igdb.com/igdb/image/upload/t_1080p/{{cover}}.jpg" alt="{{title}} cover art">
-    <h3>{{genres}}</h3>
+    {{#each genres}}
+    <h3>{{this}}</h3>
+    {{/each}}
     <h3>{{age_rating}}</h3>
     <p>{{summary}}</p>
 
