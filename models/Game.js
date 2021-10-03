@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Game extends Model {};
-
+//Defining structure of the Game table
 Game.init(
     {
         id: {

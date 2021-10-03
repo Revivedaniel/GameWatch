@@ -1,0 +1,10 @@
+<article>
+  {{#if owner}}
+    <button id="deleteButton" data-review_id={{id}}>Delete</button>
+    <button id="updateButton" data-review_id={{id}}>Update</button>
+    <script src="/js/deleteReview.js"></script>
+    <script src="/js/updateReview.js"></script>
+  {{/if}}
+  <p class="stars" data-stars={{stars}}>Stars: {{stars}}</p>
+  <p class="reviewBody" data-reviewBody="{{review}}"">{{review}}</p>
+</article>
