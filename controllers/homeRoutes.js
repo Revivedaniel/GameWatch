@@ -13,7 +13,10 @@ router.get('/', async (req, res) => {
         const element = games[key];
         element.genres = JSON.parse(element.genres)
     }
-    res.render('homepage', {games});
+    res.render('homepage', {
+      games,
+      logged_in: req.session.logged_in
+    });
 } catch (err) {
 }
 });
@@ -37,15 +40,26 @@ router.get('/game/:title', async (req, res) => {
       const gameData = await Game.findOne({where: {slug: req.params.title}});
       const game = gameData.get({plain: true});
       game.genres = JSON.parse(game.genres)
+      game.age_ratings = JSON.parse(game.age_ratings)
 
       const reviewData = await Review.findAll({where: {game_id: game.id}})
       const reviews = reviewData.map(r => r.get({plain: true}));
+      for (const key in reviews) {
+          const element = reviews[key];
+          if (element.user_id == req.session.user_id) {
+            element.owner = true;
+          }
+      }
+      console.log(reviews)
       game.reviews = reviews;
+      
 
-
-    res.render('infopage', game);
+    res.render('infopage', {
+      ...game,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
-    const gameData = await axios({
+    await axios({
       url: "https://api.igdb.com/v4/games",
       method: 'POST',
       headers: {
@@ -104,7 +118,6 @@ router.get('/game/:title', async (req, res) => {
               default:
                 break;
             }
-            // newGameData.new_age_ratings.push(element.rating)
           }
 
         for (const key in newGameData.genres) {
@@ -130,6 +143,7 @@ router.get('/game/:title', async (req, res) => {
           .then((gameData) => {
             const newGame = gameData.get({ plain: true });
             newGame.genres = JSON.parse(newGame.genres)
+            newGame.age_ratings = JSON.parse(newGame.age_ratings)
             res.render('infopage', newGame);
           })
       })

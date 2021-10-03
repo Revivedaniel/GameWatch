@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Watch</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -17,9 +17,19 @@
     <nav>
       <a class="active" href="/">Home</a>
     </nav>
+    <span>
+      {{#if logged_in}}
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+    </span>
   </header>
 {{{body}}}
-<script src="../js/search.js"></script>
+<script src="/js/search.js"></script>
+{{#if logged_in}}
+  <script src="/js/logout.js"></script>
+{{/if}}
 </body>
 
 </html>
