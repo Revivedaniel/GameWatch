@@ -7,10 +7,6 @@ const reviewsEl = document.querySelector('#reviews');
 button.addEventListener('click', async (event) => {
   event.preventDefault();
 
-  console.log(select.value);
-
-  // "game_id": 5, "stars": 5, "review": "Another review"
-
   const newReview = {
     game_id: button.dataset.game_id,
     stars: select.value,
@@ -23,7 +19,6 @@ button.addEventListener('click', async (event) => {
     headers: { 'Content-Type': 'application/json' },
   });
   if (response.ok) {
-    // If successful, redirect the browser to the profile page
     document.location.reload();
   } else {
     alert(response.statusText);
