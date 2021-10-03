@@ -2,6 +2,7 @@ const router = require('express').Router();
 const Game = require('../models/Game');
 const withAuth = require('../utils/auth');
 const axios = require('axios');
+const Review = require('../models/Review');
 require('dotenv').config();
 
 router.get('/', async (req, res) => {
@@ -12,7 +13,6 @@ router.get('/', async (req, res) => {
         const element = games[key];
         element.genres = JSON.parse(element.genres)
     }
-    console.log(games);
     res.render('homepage', {games});
 } catch (err) {
 }
@@ -37,6 +37,11 @@ router.get('/game/:title', async (req, res) => {
       const gameData = await Game.findOne({where: {slug: req.params.title}});
       const game = gameData.get({plain: true});
       game.genres = JSON.parse(game.genres)
+
+      const reviewData = await Review.findAll({where: {game_id: game.id}})
+      const reviews = reviewData.map(r => r.get({plain: true}));
+      game.reviews = reviews;
+
 
     res.render('infopage', game);
   } catch (err) {
