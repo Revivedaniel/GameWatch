@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Review extends Model {}
-
+//Defining structure of the Review table
 Review.init(
   {
     id: {
@@ -18,6 +18,7 @@ Review.init(
     game_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      //Defining that this is a foreign key in Game
       references: {
         model: 'game',
         key: 'id',

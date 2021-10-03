@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Review = require('../../models/Review');
 const withAuth = require('../../utils/auth')
-
+//Creating a review if the user is logged in
 router.post('/', withAuth, async (req, res) => {
   try {
     req.body.user_id = req.session.user_id;
@@ -18,14 +18,13 @@ router.post('/', withAuth, async (req, res) => {
     console.log(err);
   }
 });
-
+//updating a review if logged in
 router.put('/:id', withAuth, async (req, res) => {
-    //search for the review
-      //gather the game_id and user_id
     try{
         const reviewData = await Review.findByPk(req.params.id);
         const review = reviewData.get({plain: true})
         console.log(review)
+        //Verifying that the user created this review
         if (req.session.user_id == review.user_id) {
             console.log("Success")
             try {
@@ -46,12 +45,13 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 
 });
-
+//deleting a review if logged in
 router.delete('/:id', withAuth, async (req, res) => {
     try{
         const reviewData = await Review.findByPk(req.params.id);
         const review = reviewData.get({plain: true})
         console.log(review)
+        //Verifying that the user created this review
         if (req.session.user_id == review.user_id) {
             console.log("Success")
             try {
