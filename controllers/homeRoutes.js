@@ -6,7 +6,6 @@ require('dotenv').config();
 
 router.get('/', async (req, res) => {
   try {
-    //WORKING HERE recreate game model then continue here
     const gameData = await Game.findAll();
     const games = gameData.map(g => g.get({plain: true}));
     console.log(games);
@@ -19,9 +18,18 @@ router.get('/infopage', (req, res) => {
   res.render("infopage");
 });
 
+router.get('/login', (req, res) => {
+  res.render('login')
+})
+router.put('/login', (req, res) => {
+  res.render('login')
+})
+router.delete('/login', (req, res) => {
+  res.render('login')
+})
+
 router.get('/game/:title', async (req, res) => {
   try {
-      //WORKING HERE recreate game model then continue here
       const gameData = await Game.findOne({where: {slug: req.params.title}});
       const game = gameData.get({plain: true});
 
