@@ -17,6 +17,12 @@
       <p>ESRB</p>
       <p>PEGI</p>
     </span>
+
+    </span>
+    <span class="ratings">
+      <p>ESRB</p>
+      <p>PEGI</p>
+    </span>
     <span id="age_ratings" class="ratings">
     {{#each age_ratings}}
      <h4 class="age_rating_size">{{this}}</h4>
@@ -31,19 +37,19 @@
     {{> review-card}}
     {{/each}}
   </section>
+
   <aside id="newReview">
     <span>
       <label for="stars">How many stars?</label>
-
       <select name="stars" id="stars">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
-        <option value="6">6</option>
       </select>
     </span>
+
     <span>
       <input type="text" name="review" id="comment">
       <button type="submit" id="comment_submit" data-game_id={{id}}>Submit</button>
