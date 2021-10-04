@@ -9,16 +9,10 @@
     <span class="section_area">
       <span id="genres">
         <h3>Genres:</h3>
-      {{#each genres}}
-      <h4>{{this}}</h4>
-      {{/each}}
-    </span>
-    <span class="ratings">
-      <p>ESRB</p>
-      <p>PEGI</p>
-    </span>
-
-    </span>
+        {{#each genres}}
+        <h4>{{this}}</h4>
+        {{/each}}
+      </span>
     <span class="ratings">
       <p>ESRB</p>
       <p>PEGI</p>
@@ -30,7 +24,6 @@
     </span>
     </span>
   </div>
-
    <p>{{summary}}</p>
   <section id="reviews">
     {{#each reviews as |review|}}
