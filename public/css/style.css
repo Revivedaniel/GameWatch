@@ -1,15 +1,15 @@
 * {
-  background-color:255 151 185 ;
-  margin: 0;
+  background-color: rgb(255 151 185);
   padding: 0;
+  background-color: rgb(231, 146, 230);
 }
 
-.body{
-  background-color: 255 151 185;
+body {
+  background-color: rgb (255 151 185);
 }
 
-.topnav{
-  background-color: 255 117 162;
+.topnav {
+  background-color: rgb (255 117 162);
 }
 
 .wrapper {
@@ -26,7 +26,7 @@
 }
 
 .hero.home {
-  background: url("../img/download.png");
+  background: url('../img/download.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -45,7 +45,7 @@
 .games {
   display: flex;
   flex-flow: row wrap;
-  gap: 10px;
+  gap: 200px;
   align-items: baseline;
   justify-content: center;
 }
@@ -54,6 +54,7 @@
   flex: 0 1 300px;
 }
 
+<<<<<<< HEAD
 .login-card {
   margin: 0 0 20px 0;
   flex: 0 0 50%;
@@ -66,3 +67,131 @@
   background-color: #c6c9c9;
   color: var(--light);
 }
+=======
+.game_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.game_info img {
+  margin-left: 15px;
+  height: 360px;
+  width: auto;
+  box-shadow: 5px 3px 5px;
+}
+
+.section_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 40px;
+}
+
+.ratings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 120px;
+}
+
+.age_rating_size {
+  width: 40px;
+}
+
+input#comment {
+  background-color: white;
+}
+
+button#comment_submit {
+  background-color: rgb(189, 55, 189);
+  color: white;
+}
+
+.game img {
+  height: 459px;
+  width: auto;
+}
+
+#home {
+  color: #6b0bc5;
+  font-size: 100px;
+  text-decoration: none;
+  font-weight: 900;
+  font-family: fantasy;
+  text-shadow: 4px 4px black;
+}
+
+a.logIn {
+  text-decoration: none;
+  font-size: 35px;
+  font-weight: 700;
+  font-family: sans-serif;
+  color: white;
+  border-color: rgb(107, 11, 197);
+  background-color: rgb(107, 11, 197);
+  box-shadow: 4px 4px 5px black;
+  padding: 3px;
+}
+
+.topnav {
+  display: flex;
+}
+
+#left-nav {
+  width: 33%;
+}
+
+#middle-nav {
+  width: 33%;
+  text-align: center;
+}
+
+#right-nav {
+  width: 33%;
+  text-align: right;
+  margin-top: 10px;
+}
+
+#search {
+  margin-top: 120px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+input#searchBar {
+  width: 50%;
+  height: 2.8rem;
+  background: #f5f5f5;
+  outline: none;
+  border: none;
+  border-radius: 1.625rem;
+  padding: 0 3.5rem 0 1.5rem;
+  font-size: 1rem;
+}
+
+button#search-submit {
+  width: 5.8%;
+  height: 2.8rem;
+  outline: none;
+  border: none;
+  border-radius: 1.625rem;
+  padding: 0 3.5rem 0 1.5rem;
+  font-size: 1rem;
+  background-color: rgb(189, 55, 189);
+  color: white;
+  margin-left: -99px;
+}
+
+#hr {
+  margin: auto;
+  width: 33%;
+  color: #6b0bc5;
+}
+
+.game img {
+  box-shadow: 5px 5px 5px black;
+}
+>>>>>>> 520a012d6a38fc8b767df65c0c48086bd8efd321

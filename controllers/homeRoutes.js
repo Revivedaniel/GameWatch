@@ -35,6 +35,11 @@ router.put('/login', (req, res) => {
 router.delete('/login', (req, res) => {
   res.render('login');
 });
+
+router.get('/game', (req, res) => {
+  res.redirect('/')
+})
+
 //This is the route where the game is searched in the database and rendered to infopage.
 router.get('/game/:title', async (req, res) => {
   try {
