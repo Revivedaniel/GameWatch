@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <section class="info=">
   <div class="">
     <h2>{{title}}</h2>
@@ -6,3 +7,50 @@
     <h3 class="age-rating">{{age_rating}}</h3>
     <p>{{summary}}</p>
 </section>
+=======
+
+</head>
+<body>
+  <div class="">
+    <h2>{{title}}</h2>
+    <img src="https://images.igdb.com/igdb/image/upload/t_1080p/{{cover}}.jpg" alt="{{title}} cover art">
+    <span id="genres">
+    {{#each genres}}
+      <h3>{{this}}</h3>
+    {{/each}}
+    </span>
+    <span id="age_ratings">
+    {{#each age_ratings}}
+     <h3>{{this}}</h3>
+    {{/each}}
+    </span>
+    <p>{{summary}}</p>
+
+  </div>
+  <section id="reviews">
+    {{#each reviews as |review|}}
+    {{> review-card}}
+    {{/each}}
+  </section>
+  <aside id="newReview">
+    <span>
+      <label for="stars">How many stars?</label>
+
+      <select name="stars" id="stars">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </span>
+    <span>
+      <input type="text" name="review">
+      <button type="submit" data-game_id={{id}}>Submit</button>
+    </span>
+  </aside>
+  <script src="../js/newReview.js"></script>
+</body>
+</html>
+>>>>>>> main

@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Dark Souls",
+        "genres": "Action role-playing",
+        "summary": "developed by FromSoftware and published by Namco Bandai Games.",
+        "age_ratings": "T",
+        "cover": "Pic",
+        "slug": "dark-souls"
+    },
+    {
+        "title": "Shin Megami Tensei IV",
+        "genres": "Role-playing",
+        "summary": "Shin Megami Tensei IV is a Japanese post-apocalyptic role-playing video game developed by Atlus for the Nintendo 3DS.",
+        "age_ratings": "T",
+        "cover": "Pic",
+        "slug": "shin-megami-tensei-iv"
+    },
+    {
+        "title": "Undertale",
+        "genres": "Role-playing",
+        "summary": "is a 2D role-playing video game created by indie developer Toby Fox.",
+        "age_ratings": "T",
+        "cover": "Pic",
+        "slug": "undertale"
+    }
+]
