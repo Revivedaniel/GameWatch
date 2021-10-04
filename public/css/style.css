@@ -54,20 +54,28 @@ body {
   flex: 0 1 300px;
 }
 
-<<<<<<< HEAD
 .login-card {
   margin: 0 0 20px 0;
   flex: 0 0 50%;
-  max-width: 50%;
+  max-width: 25%;
   padding: 5px;
-  border: 3px solid var(--dark);
+  border: 5px solid var(--dark);
   border-radius: var(--border-radius);
   border-style: double;
   border-width: thick;
-  background-color: #c6c9c9;
   color: var(--light);
 }
-=======
+
+button#login {
+  background-color: rgb(189, 55, 189);
+  color: white;
+}
+
+button#sign_up {
+    background-color: rgb(189, 55, 189);
+    color: white;
+}
+
 .game_info {
   display: flex;
   flex-direction: row;
@@ -194,4 +202,3 @@ button#search-submit {
 .game img {
   box-shadow: 5px 5px 5px black;
 }
->>>>>>> 520a012d6a38fc8b767df65c0c48086bd8efd321
