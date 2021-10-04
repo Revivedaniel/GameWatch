@@ -9,22 +9,27 @@
 </head>
 
 <body>
-  <header class="topnav">
-    <form id="search">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit">Search</button>
-    </form>
-    <nav>
-      <a class="active" href="/">Home</a>
-    </nav>
-    <span>
+  <nav class="topnav">
+    <span id="left-nav">
+    </span>
+    <span id="middle-nav">
+      <h1><a id="home" class="active" href="/">GameWatch</a></h1>
+    </span>
+    <span id="right-nav">
       {{#if logged_in}}
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login" class="logIn">Login</a>
         {{/if}}
     </span>
-  </header>
+  </nav>
+
+  <hr id="hr">
+
+  <form id="search">
+      <input id="searchBar" type="text" placeholder="Search your game here..." name="search">
+      <button id="search-submit" type="submit">Search</button>
+    </form>
 {{{body}}}
 <script src="/js/search.js"></script>
 {{#if logged_in}}
