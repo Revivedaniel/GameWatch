@@ -87,11 +87,27 @@ body{
 
 input#comment {
   background-color: white;
+  padding: 10px;
+  font-size: 1px;
+  border: 1px solid grey;
+  float: left;
+  width: 25%;
+  background: #f1f1f1;
 }
 
 button#comment_submit {
   background-color: rgb(189, 55, 189);
   color: white;
+  width: 5.8%;
+    height: 2.8rem;
+    outline: none;
+    border: none;
+    border-radius: 1.625rem;
+    padding: 0 3.5rem 0 1.5rem;
+    font-size: 1rem;
+    background-color: rgb(189, 55, 189);
+    color: white;
+    margin-left: -99px;
 }
 
 
