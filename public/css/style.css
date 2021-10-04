@@ -1,11 +1,16 @@
 * {
-  margin: 0;
+  background-color:rgb(255 151 185) ;
   padding: 0;
   background-color: rgb(231,146,230)
 }
 
+body{
+  background-color:rgb (255 151 185);
+}
 
-
+.topnav{
+  background-color:rgb (255 117 162);
+}
 
 .wrapper {
   margin: 0 auto;
@@ -48,6 +53,49 @@
 .game {
   flex: 0 1 300px;
 }
+
+.game_info {
+  display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.game_info img {
+  margin-left: 15px;
+  height: 360px;
+  width: auto;
+  box-shadow: 5px 3px 5px;
+}
+
+.section_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 40px;
+}
+
+.ratings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.age_rating_size {
+  width: 40px;
+}
+
+input#comment {
+  background-color: white;
+}
+
+button#comment_submit {
+  background-color: rgb(189, 55, 189);
+  color: white;
+}
+
+
+
 
 .game img {
   height: 459px;
