@@ -54,6 +54,10 @@ body {
   flex: 0 1 300px;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5b6370e3b012c4867b96f69fcaf11ff71bbd85d3
 .login-card {
   margin: 0 0 20px 0;
   flex: 0 0 50%;
@@ -66,6 +70,7 @@ body {
   color: var(--light);
 }
 
+<<<<<<< HEAD
 button#login {
   background-color: rgb(189, 55, 189);
   color: white;
@@ -76,6 +81,8 @@ button#sign_up {
     color: white;
 }
 
+=======
+>>>>>>> 5b6370e3b012c4867b96f69fcaf11ff71bbd85d3
 .game_info {
   display: flex;
   flex-direction: row;
@@ -110,11 +117,27 @@ button#sign_up {
 
 input#comment {
   background-color: white;
+  padding: 10px;
+  font-size: 1px;
+  border: 1px solid grey;
+  float: left;
+  width: 25%;
+  background: #f1f1f1;
 }
 
 button#comment_submit {
   background-color: rgb(189, 55, 189);
   color: white;
+  width: 5.8%;
+    height: 2.8rem;
+    outline: none;
+    border: none;
+    border-radius: 1.625rem;
+    padding: 0 3.5rem 0 1.5rem;
+    font-size: 1rem;
+    background-color: rgb(189, 55, 189);
+    color: white;
+    margin-left: -99px;
 }
 
 .game img {
@@ -202,3 +225,7 @@ button#search-submit {
 .game img {
   box-shadow: 5px 5px 5px black;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5b6370e3b012c4867b96f69fcaf11ff71bbd85d3
