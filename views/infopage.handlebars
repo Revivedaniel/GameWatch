@@ -24,13 +24,11 @@
     </span>
     </span>
   </div>
-   <p>{{summary}}</p>
+   <p id="gameSummary">{{summary}}</p>
   <section id="reviews">
     {{#each reviews as |review|}}
     {{> review-card}}
     {{/each}}
-  </section>
-
   <aside id="newReview">
     <span>
       <label for="stars">How many stars?</label>
@@ -43,11 +41,13 @@
       </select>
     </span>
 
-    <span>
+    <span id="reviewInput">
       <input type="text" name="review" id="comment">
       <button type="submit" id="comment_submit" data-game_id={{id}}>Submit</button>
     </span>
   </aside>
+  </section>
+
   <script src="../js/newReview.js"></script>
 </body>
 </html>
