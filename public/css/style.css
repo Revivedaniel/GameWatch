@@ -58,11 +58,13 @@ body {
   flex: 0 0 50%;
   max-width: 25%;
   padding: 5px;
-  border: 5px solid var(--dark);
+  border: 10px solid var(--dark);
   border-radius: var(--border-radius);
   border-style: double;
   border-width: thick;
   color: var(--light);
+  box-shadow: 4px 4px 4px black;
+  border-color: purple;
 }
 
 button#login {
@@ -153,7 +155,7 @@ button#comment_submit {
   color: white;
   border-color: rgb(107, 11, 197);
   background-color: rgb(107, 11, 197);
-  box-shadow: 4px 4px 5px black;
+  box-shadow: 4px 4px 5px purple;
   padding: 3px;
 }
 
@@ -345,3 +347,27 @@ button#search-submit {
     align-items: center;
   }
 }
+
+input#email-login.form-input{
+  background-color: white;
+}
+input#password-login.form-input{
+  background-color: white;
+}
+input#name-signup.form-input{
+  background-color: white;
+}
+
+input#password-signup.form-input{
+  background-color: white;
+}
+
+input#email-signup.form-input{
+  background-color: white;
+}
+
+select#stars {
+  background-color: rebeccapurple;
+  color:white;
+}
+
