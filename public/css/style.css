@@ -1,5 +1,4 @@
 * {
-  background-color: rgb(255 151 185);
   padding: 0;
   background-color: rgb(231, 146, 230);
 }
@@ -79,7 +78,7 @@ button#sign_up {
 .game_info {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .game_info img {
@@ -109,28 +108,27 @@ button#sign_up {
 }
 
 input#comment {
-  background-color: white;
-  padding: 10px;
-  font-size: 1px;
-  border: 1px solid grey;
-  float: left;
-  width: 25%;
-  background: #f1f1f1;
-}
-
-button#comment_submit {
-  background-color: rgb(189, 55, 189);
-  color: white;
-  width: 5.8%;
+  width: 50%;
     height: 2.8rem;
+    background: #f5f5f5;
     outline: none;
     border: none;
     border-radius: 1.625rem;
     padding: 0 3.5rem 0 1.5rem;
     font-size: 1rem;
-    background-color: rgb(189, 55, 189);
-    color: white;
-    margin-left: -99px;
+}
+
+button#comment_submit {
+  background-color: rgb(189, 55, 189);
+  color: white;
+  width: 20.8%;
+  height: 2.8rem;
+  outline: none;
+  border: none;
+  border-radius: 1.625rem;
+  font-size: 1rem;
+  background-color: rgb(189, 55, 189);
+  color: white;
 }
 
 .game img {
@@ -147,7 +145,7 @@ button#comment_submit {
   text-shadow: 4px 4px black;
 }
 
-a.logIn {
+.logIn {
   text-decoration: none;
   font-size: 35px;
   font-weight: 700;
@@ -182,7 +180,12 @@ a.logIn {
   margin-top: 120px;
   margin-bottom: 60px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1.625rem;
 }
 
 input#searchBar {
@@ -197,16 +200,15 @@ input#searchBar {
 }
 
 button#search-submit {
-  width: 5.8%;
+  width: 12%;
   height: 2.8rem;
   outline: none;
   border: none;
   border-radius: 1.625rem;
-  padding: 0 3.5rem 0 1.5rem;
   font-size: 1rem;
   background-color: rgb(189, 55, 189);
   color: white;
-  margin-left: -99px;
+  /* margin-left: 15px;*/
 }
 
 #hr {
@@ -217,4 +219,129 @@ button#search-submit {
 
 .game img {
   box-shadow: 5px 5px 5px black;
+}
+
+#gameSummary {
+  width: 50%;
+  margin: auto;
+}
+
+#reviews {
+  width: 50%;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+
+#newReview {
+  width: 50%;
+}
+
+#reviewInput {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f5f5f5;
+    border-radius: 1.625rem;
+}
+
+/*Responsive*/
+@media screen and (max-width: 1620px) {
+  #middle-nav {
+    width: 50%;
+  }
+  #left-nav, #right-nav {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  button#search-submit {
+    width: 20%;
+  }
+  #home {
+    font-size: 77px;
+  }
+  button#comment_submit {
+    width: 25%;
+    font-size: 70%;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  #reviews {
+    width: 50%;
+    display: flex;
+    margin: auto;
+    flex-direction: column-reverse;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  #home {
+    font-size: 77px;
+  }
+  #left-nav, #right-nav {
+    width: 15%;
+  }
+  #middle-nav {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  button#search-submit {
+    font-size: 12px;
+  }
+  .logIn {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #left-nav {
+    display: none;
+  }
+  #right-nav {
+    align-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+  #middle-nav {
+    width: 100%;
+  }
+  .topnav {
+    flex-direction: column;
+    align-items: center;  
+  }
+  #search {
+    width: 80%;
+  }
+  button#search-submit {
+    width: 35%;
+  }
+  .game_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  #home {
+    font-size: 50px;  
+  }
+  .game img {
+    height: 100%;
+    width: 100%;
+  }
+  .game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
