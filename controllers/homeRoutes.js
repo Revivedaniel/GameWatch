@@ -2,13 +2,18 @@ const router = require('express').Router();
 const Game = require('../models/Game');
 const axios = require('axios');
 const Review = require('../models/Review');
-const User = require('../models/User')
+const User = require('../models/User');
+const sequelize = require('../config/connection');
 require('dotenv').config();
 //this is the root route for the website
 router.get('/', async (req, res) => {
   //This will gather the first 50 games in the DB to display on the homepage
   try {
-    const gameData = await Game.findAll();
+    const gameData = await Game.findAll({
+      order: [
+        ['id', 'DESC']
+      ]
+    });
     const games = gameData.map((g) => g.get({ plain: true }));
     for (const key in games) {
       const element = games[key];
