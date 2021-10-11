@@ -23,4 +23,8 @@ GNU GPLv3
 If you would like to contribute to this project contact Daniel at the email below
 ## Questions
 * [GitHubLink](https://github.com/Revivedaniel)
-* <a href="mailto:it-support@kth.se">webdevstark@gmail.com</a>
+* <a href="mailto:webdevstark@gmail.com">webdevstark@gmail.com</a>
+## Live Site
+https://lazy-afternoon-game-watch.herokuapp.com/
+## Demo
+![DemoVideo](./images/gameWatchDemo.gif)
