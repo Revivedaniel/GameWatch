@@ -201,7 +201,7 @@ input#searchBar {
   border: none;
   border-radius: 1.625rem;
   padding: 0 3.5rem 0 1.5rem;
-  font-size: 1rem;
+  font-size: 20px;
 }
 
 button#search-submit {
@@ -334,7 +334,7 @@ input#email-login.form-input{
   height: 30px;
   font-size:  20px;
   position: relative;
-  left:20px;
+  left: 19px;
 }
 input#password-login.form-input{
   background-color: white;
@@ -347,6 +347,7 @@ input#name-signup.form-input{
   height: 30px;
   position: relative;
   left:18px;
+  font-size:  20px;
 }
 
 input#password-signup.form-input{
@@ -397,6 +398,7 @@ select#stars {
 #middle-nav .fa-search{
   text-transform: none;
   color:black;
+
 }
 
 #log-sign {
