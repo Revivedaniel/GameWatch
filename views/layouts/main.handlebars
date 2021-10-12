@@ -6,30 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Watch</title>
   <link rel="stylesheet" href="/css/style.css">
+  <script src="https://kit.fontawesome.com/cdd120272a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <nav class="topnav">
+
     <span id="left-nav">
-    </span>
-    <span id="middle-nav">
       <h1><a id="home" class="active" href="/">GameWatch</a></h1>
     </span>
+
+    <span id="middle-nav">
+      <form id="search">
+      <input id="searchBar" type="text" placeholder="Search your game here..." name="search">
+      <a id="search-submit" type="submit" href="#"><i class="fas fa-search"></i></a>
+    </form>
+    </span>
+
     <span id="right-nav">
       {{#if logged_in}}
         <button class="logIn" id="logout">logout</button>
         {{else}}
-        <a href="/login" class="logIn">Login</a>
+        <a href="/login" class="logIn"><i class="fas fa-user-circle fa-3x"></i></a>
         {{/if}}
     </span>
   </nav>
 
   <hr id="hr">
 
-  <form id="search">
-      <input id="searchBar" type="text" placeholder="Search your game here..." name="search">
-      <button id="search-submit" type="submit">Search</button>
-    </form>
 {{{body}}}
 <script src="/js/search.js"></script>
 {{#if logged_in}}
