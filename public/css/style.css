@@ -11,6 +11,10 @@ body {
 .topnav {
   background-color: tomato;
   height: 100px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  z-index: 999;
 }
 
 .wrapper {
@@ -164,9 +168,6 @@ button#comment_submit {
 
 }
 
-.topnav {
-  display: flex;
-}
 
 #left-nav {
   width: 15%;
