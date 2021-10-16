@@ -1,14 +1,20 @@
 * {
   padding: 0;
-  background-color: rgb(231, 146, 230);
+  margin:auto;
+  
 }
 
 body {
-  background-color: rgb (255 151 185);
+  background-color: ghostwhite;
 }
 
 .topnav {
-  background-color: rgb (255 117 162);
+  background-color: tomato;
+  height: 100px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  z-index: 999;
 }
 
 .wrapper {
@@ -44,37 +50,40 @@ body {
 .games {
   display: flex;
   flex-flow: row wrap;
-  gap: 200px;
   align-items: baseline;
   justify-content: center;
+  margin-top: 60px;
+  white-space: 20px;
 }
 
 .game {
-  flex: 0 1 300px;
+  width:500px;
+  background-color: rgb(250, 99, 44);
+  padding:10px;
+  display:flex;
+  color:white;
+  box-shadow: 2px 5px 6px black;
+  margin: 20px;
 }
 
-.login-card {
-  margin: 0 0 20px 0;
-  flex: 0 0 50%;
-  max-width: 25%;
-  padding: 5px;
-  border: 10px solid var(--dark);
-  border-radius: var(--border-radius);
-  border-style: double;
-  border-width: thick;
-  color: var(--light);
-  box-shadow: 4px 4px 4px black;
-  border-color: purple;
+.game div h2 a {
+  text-decoration: none;
+  color:white;
+  font-family: sans-serif;
 }
 
 button#login {
-  background-color: rgb(189, 55, 189);
+  background-color: rgb(0, 140, 255);
   color: white;
+  width: 120px;
+  height: 40px;
 }
 
 button#sign_up {
-    background-color: rgb(189, 55, 189);
+    background-color: rgb(0, 140, 255);
     color: white;
+    width: 120px;
+    height: 40px;
 }
 
 .game_info {
@@ -134,71 +143,66 @@ button#comment_submit {
 }
 
 .game img {
-  height: 459px;
-  width: auto;
+  height: 199px;
+  width: 150px;
+  padding:20px;
+  
 }
 
 #home {
-  color: #6b0bc5;
-  font-size: 100px;
+  color: whitesmoke;
+  font-size: 60px;
   text-decoration: none;
   font-weight: 900;
   font-family: fantasy;
-  text-shadow: 4px 4px black;
+  letter-spacing: 2.4px;
+  margin-left: 25px;
 }
 
 .logIn {
   text-decoration: none;
-  font-size: 35px;
-  font-weight: 700;
-  font-family: sans-serif;
   color: white;
-  border-color: rgb(107, 11, 197);
-  background-color: rgb(107, 11, 197);
-  box-shadow: 4px 4px 5px purple;
-  padding: 3px;
+  position: relative;
+  top:20px;
+  right: 15px;
+
 }
 
-.topnav {
-  display: flex;
-}
 
 #left-nav {
-  width: 33%;
+  width: 15%;
 }
 
 #middle-nav {
-  width: 33%;
+  width: 70%;
   text-align: center;
 }
 
 #right-nav {
-  width: 33%;
+  width: 15%;
   text-align: right;
   margin-top: 10px;
 }
 
 #search {
-  margin-top: 120px;
-  margin-bottom: 60px;
   display: flex;
   justify-content: space-between;
   background-color: #f5f5f5;
-  width: 50%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 1.625rem;
+  border-radius: 12px;
 }
 
 input#searchBar {
-  width: 50%;
+  width: 70%;
   height: 2.8rem;
   background: #f5f5f5;
   outline: none;
   border: none;
   border-radius: 1.625rem;
   padding: 0 3.5rem 0 1.5rem;
-  font-size: 1rem;
+  font-size: 20px;
 }
 
 button#search-submit {
@@ -206,22 +210,13 @@ button#search-submit {
   height: 2.8rem;
   outline: none;
   border: none;
-  border-radius: 1.625rem;
+  border-radius: 12px;
   font-size: 1rem;
-  background-color: rgb(189, 55, 189);
   color: white;
   /* margin-left: 15px;*/
 }
 
-#hr {
-  margin: auto;
-  width: 33%;
-  color: #6b0bc5;
-}
 
-.game img {
-  box-shadow: 5px 5px 5px black;
-}
 
 #gameSummary {
   width: 50%;
@@ -243,7 +238,7 @@ button#search-submit {
     display: flex;
     justify-content: space-between;
     background-color: #f5f5f5;
-    border-radius: 1.625rem;
+    border-radius: 12pxs
 }
 
 /*Responsive*/
@@ -333,41 +328,110 @@ button#search-submit {
   }
 }
 
-@media screen and (max-width: 412px) {
-  #home {
-    font-size: 50px;  
-  }
-  .game img {
-    height: 100%;
-    width: 100%;
-  }
-  .game {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
 
 input#email-login.form-input{
   background-color: white;
+  width: 50%;
+  height: 30px;
+  font-size:  20px;
+  position: relative;
+  left: 19px;
 }
 input#password-login.form-input{
   background-color: white;
+  width: 50%;
+  height: 30px;
 }
 input#name-signup.form-input{
   background-color: white;
+  width: 50%;
+  height: 30px;
+  position: relative;
+  left:18px;
+  font-size:  20px;
 }
 
 input#password-signup.form-input{
   background-color: white;
+  width: 50%;
+  height: 30px;
 }
 
 input#email-signup.form-input{
   background-color: white;
+  width: 50%;
+  height: 30px;
+  font-size:  20px;
+  position: relative;
+  left:19px;
 }
 
 select#stars {
-  background-color: rebeccapurple;
+  background-color: rgb(255, 136, 0);
   color:white;
 }
+
+.game-cardImg {
+  width:30%;
+}
+.game-cardImg2 {
+  width: 70%;
+}
+
+.game-cardImg2 div {
+  margin-left: 40px;
+  position: relative;
+  bottom:40px; 
+
+}
+
+.game-cardImg2 a h2 {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  text-shadow: 2px 1px 1px black;
+}
+
+.genres {
+  font-size: 18px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+ 
+#middle-nav .fa-search{
+  text-transform: none;
+  color:black;
+
+}
+
+#log-sign {
+  justify-content: center;
+  background-color: orangered;
+  box-shadow: 2px 2px 2px;
+  width: 70%;
+  height: 600px;
+  text-align: center;
+  margin-top: 300px;
+}
+
+#log-sign h2{
+  position: relative;
+}
+
+.login-card {
+  color: white;
+  position: relative;
+  top: 50px;
+  font-family: sans-serif;
+  font-size:20px;
+}
+
+.login-card2 {
+  color: white;
+  position: relative;
+  top: 50px;
+  font-family: sans-serif;
+  font-size:20px;
+  top: 110px;
+}
+
+
 
