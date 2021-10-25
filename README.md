@@ -55,7 +55,7 @@ If you would like to contribute to this project contact Daniel at the email belo
 * <a href="mailto:webdevstark@gmail.com">webdevstark@gmail.com</a>
 
 ## Live Site
-https://lazy-afternoon-game-watch.herokuapp.com/
+http://www.gamewatch.reviews/
 
 ## Demo
 ![DemoVideo](./images/gameWatchDemo.gif)
