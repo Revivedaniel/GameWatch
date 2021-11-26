@@ -65,6 +65,9 @@ After the seeds are done you can now start the server with this command.
 npm start
 ```
 
+## Testing
+Currently, there are no tests developed for this project.
+
 ## Questions
 * [GitHubLink](https://github.com/Revivedaniel)
 * <a href="mailto:webdevstark@gmail.com">webdevstark@gmail.com</a>
