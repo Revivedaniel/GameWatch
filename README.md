@@ -3,7 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Description
-- We built this app with the mind set of combining crowd sourced metrics with user content and video game information. Our goal is to have our userbase crowd source stats, submit and view high quality video game content, review video games, and more.
+- With this project we are tackling the problem of not having quick video game information. Now users have the ability to search the video games they want more information about and leave reviews. Users can create an account and leave reviews for games. 
 
 ## Table of Contents
 - [Installation](#installation)
