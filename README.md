@@ -3,7 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Description
-- With this project we are tackling the problem of not having quick video game information. Now users have the ability to search the video games they want more information about and leave reviews. Users can create an account and leave reviews for games. 
+- With this project we are tackling the problem of not having quick video game information. Now users have the ability to search the video games they want more information about and leave reviews.
 
 ## Table of Contents
 - [Installation](#installation)
