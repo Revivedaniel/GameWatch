@@ -56,6 +56,14 @@ To install this project, first clone the repository. Once the repo is cloned, na
 ```md
 npm install
 ```
+This will install all the dependencies. Next you'll want to seed the database (Seed date needs to be updated). Run the following command to seed the database.
+```md
+npm run seed
+```
+After the seeds are done you can now start the server with this command.
+```md
+npm start
+```
 
 ## Questions
 * [GitHubLink](https://github.com/Revivedaniel)
