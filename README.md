@@ -50,6 +50,13 @@ GNU GPLv3
 ## How to Contribute
 If you would like to contribute to this project contact Daniel at the email below
 
+## Installation
+
+To install this project, first clone the repository. Once the repo is cloned, navigate to the folder in your terminal and run the following command.
+```md
+npm install
+```
+
 ## Questions
 * [GitHubLink](https://github.com/Revivedaniel)
 * <a href="mailto:webdevstark@gmail.com">webdevstark@gmail.com</a>
