@@ -34,7 +34,7 @@
 - sequelize
 
 ## Usage
-To view a video game's page, type the name of the video game in the search bar (Space sensative and spelling sensative).
+To view a video game's page, type the name of the video game in the search bar.
 To create an account navigate to the login page and enter your name, email, and password.
 
 ## Credits
