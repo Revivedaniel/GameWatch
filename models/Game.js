@@ -20,7 +20,7 @@ Game.init(
             allowNull: false,
           },
           summary: {
-            type: DataTypes.STRING(2000),
+            type: DataTypes.STRING(10000),
             allowNull: false,
           },
           age_ratings: {
