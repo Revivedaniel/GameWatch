@@ -15,6 +15,11 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  for (const key in gameData) {
+      const element = gameData[key];
+      element.genres = JSON.stringify(element.genres)
+      element.age_ratings = JSON.stringify(element.age_ratings)
+  }
   const games = await Game.bulkCreate(gameData);
 
   const reviews = await Review.bulkCreate(reviewData)
