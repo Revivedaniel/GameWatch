@@ -1,19 +1,19 @@
-
-
-
-
-<section class="game">
-  <span class="game-cardImg">
-  <a href="/game/{{slug}}"><img src="https://images.igdb.com/igdb/image/upload/t_1080p/{{cover}}.jpg" alt="{{title}} cover art"></a>
+<section class='game' data-ref='/game/{{slug}}'>
+  <span class='game-cardImg'>
+    <a><img
+        src='https://images.igdb.com/igdb/image/upload/t_1080p/{{cover}}.jpg'
+        alt='{{title}} cover art'
+      /></a>
   </span>
-  <span class="game-cardImg2">
-  <div>
-    <h2><a href="/game/{{slug}}">{{title}}</a></h2>
-  </div>
-  <div>
-    {{#each genres}}
-    <p class="genres">{{this}}</p>
-  {{/each}}
-  </div>
+  <span class='game-cardImg2'>
+    <div>
+      <h2><a>{{title}}</a></h2>
+    </div>
+    <div>
+      {{#each genres}}
+        <p class='genres'>{{this}}</p>
+      {{/each}}
+    </div>
   </span>
 </section>
+<script src='../js/cards.js'></script>
